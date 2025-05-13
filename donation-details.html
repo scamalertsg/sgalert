@@ -53,12 +53,16 @@
       font-weight: bold;
     }
 
-    iframe {
-      display: block;
+    .qr-container {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .qr-container img {
+      max-width: 300px;
       width: 100%;
-      height: 300px;
-      border: none;
-      margin-top: 20px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
     }
 
     .submit-btn {
@@ -110,7 +114,9 @@
 
       <div class="amount" id="amountDisplay">Selected Amount: -</div>
 
-      <iframe src="https://buy.stripe.com/00geV99wa3Rr2zu7sz"></iframe>
+      <div class="qr-container">
+        <img src="https://singaporescammer.github.io/sgalert/assets/paynowqrcode.png" alt="PayNow QR Code">
+      </div>
 
       <button type="submit" class="submit-btn">Confirm & Submit</button>
     </form>
@@ -121,11 +127,11 @@
       const donation = document.getElementById("donation").value;
       const amountDisplay = document.getElementById("amountDisplay");
       const prices = {
-        "Donate Coffin": "$50",
-        "Food Hamper": "$30",
-        "Temple Tiles": "$10",
-        "Monk Robe": "$80",
-        "Animal Release": "$20",
+        "Donate Coffin": "$500",
+        "Food Hamper": "$58",
+        "Temple Tiles": "$38",
+        "Monk Robe": "$70",
+        "Animal Release": "$38",
         "Oil Lamp": "$15"
       };
       amountDisplay.textContent = donation ? `Selected Amount: ${prices[donation]}` : "Selected Amount: -";
