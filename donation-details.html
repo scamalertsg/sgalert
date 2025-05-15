@@ -169,15 +169,18 @@
       <input type="date" name="Date of Birth" required />
 
       <label for="donation">Select Donation Type</label>
-      <select name="Donation Option" id="donation" required onchange="updateAmount()">
-        <option value="">-- Choose an Option --</option>
-        <option value="Donate Coffin">Donate Coffin – $500</option>
-        <option value="Food Hamper">Food Hamper – $58</option>
-        <option value="Temple Tiles">Temple Tiles – $38</option>
-        <option value="Monk Robe">Monk Robe – $70</option>
-        <option value="Animal Release">Animal Release – $38</option>
-        <option value="Oil Lamp">Oil Lamp – $15</option>
-      </select>
+<select name="Donation Option" id="donation" required onchange="updateAmount()">
+  <option value="">-- Choose an Option --</option>
+  <option value="Donate Coffin">Donate Coffin – $500</option>
+  <option value="Food Hamper">Food Hamper – $58</option>
+  <option value="Temple Tiles">Temple Tiles – $38</option>
+  <option value="Monk Robe">Monk Robe – $70</option>
+  <option value="Animal Release">Animal Release – $38</option>
+  <option value="Oil Lamp">Oil Lamp – $15</option>
+  <option value="1 Solar Tile">1 Solar Tile – $180</option>
+  <option value="5 Solar Tiles">5 Solar Tiles – $800</option>
+  <option value="10+ Solar Tiles">10+ Solar Tiles – $1500+</option>
+</select>
 
       <div class="amount" id="amountDisplay">Selected Amount: -</div>
 
